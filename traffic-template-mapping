@@ -1,0 +1,251 @@
+PUT /_template/ntopng-template
+{
+  "template": "ntopng-*",
+   "settings" : {
+      "index" : {
+        "number_of_shards" : "6",
+        "number_of_replicas": 1
+      }
+    },
+     "mappings" : {
+      "properties" : {
+        "@timestamp" : {
+          "type" : "date"
+        },
+        "@version" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "APPL_LATENCY_MS" : {
+          "type" : "float"
+        },
+        "DST_AS" : {
+          "type" : "long"
+        },
+        "DST_IP_CITY" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "DST_IP_COUNTRY" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "DST_TOS" : {
+          "type" : "long"
+        },
+        "FIRST_SWITCHED" : {
+          "type" : "long"
+        },
+        "FLOW_END_MILLISECONDS" : {
+          "type" : "long"
+        },
+        "FLOW_START_MILLISECONDS" : {
+          "type" : "long"
+        },
+        "HTTP_HOST" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "HTTP_METHOD" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "HTTP_MIME" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "HTTP_REFERER" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "HTTP_RET_CODE" : {
+          "type" : "long"
+        },
+        "HTTP_UA" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "HTTP_URL" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "ICMP_TYPE" : {
+          "type" : "long"
+        },
+        "INPUT_SNMP" : {
+          "type" : "long"
+        },
+        "IN_BYTES" : {
+          "type" : "long"
+        },
+        "IN_PKTS" : {
+          "type" : "long"
+        },
+        "IPV4_DST_ADDR" : {
+          "type" : "ip"
+        },
+        "IPV4_SRC_ADDR" : {
+          "type" : "ip"
+        },
+        "IPV6_DST_ADDR" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "IPV6_SRC_ADDR" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "IP_PROTOCOL_VERSION" : {
+          "type" : "long"
+        },
+        "L4_DST_PORT" : {
+          "type" : "long"
+        },
+        "L4_DST_PORT_MAP" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "L4_SRC_PORT" : {
+          "type" : "long"
+        },
+        "L4_SRC_PORT_MAP" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "L7_PROTO_NAME" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "LAST_SWITCHED" : {
+          "type" : "long"
+        },
+        "NPROBE_IPV4_ADDRESS" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "OUTPUT_SNMP" : {
+          "type" : "long"
+        },
+        "OUT_BYTES" : {
+          "type" : "long"
+        },
+        "OUT_PKTS" : {
+          "type" : "long"
+        },
+        "PROTOCOL" : {
+          "type" : "long"
+        },
+        "PROTOCOL_MAP" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "SRC_AS" : {
+          "type" : "long"
+        },
+        "SRC_IP_CITY" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "SRC_IP_COUNTRY" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "SRC_TOS" : {
+          "type" : "long"
+        },
+        "TCP_FLAGS" : {
+          "type" : "long"
+        }
+      }
+    }
+}
